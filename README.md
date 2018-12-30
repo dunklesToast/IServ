@@ -9,18 +9,18 @@
 * [IServTool](#IServTool)
     * [new IServTool(ServerHost, username, password, [keepalive], [log], [reuseCookies])](#new_IServTool_new)
     * [.login()](#IServTool+login) ⇒ <code>Promise.&lt;void&gt;</code>
-    * [.getNotifications(since)](#IServTool+getNotifications) ⇒ <code>Promise.&lt;\*&gt;</code>
-    * [.getMailFolders()](#IServTool+getMailFolders) ⇒ <code>Promise.&lt;\*&gt;</code>
-    * [.getUnreadMails()](#IServTool+getUnreadMails) ⇒ <code>Promise.&lt;\*&gt;</code>
-    * [.getMessagesForInbox(path, length, start, column, dir)](#IServTool+getMessagesForInbox) ⇒ <code>Object</code>
-    * [.getUpcomingEvents(includeSubscriptions, limit)](#IServTool+getUpcomingEvents) ⇒ <code>Object</code>
-    * [.getUserProfilePic(user, w&#x3D;, h&#x3D;)](#IServTool+getUserProfilePic) ⇒ <code>Object</code>
-    * [.getMessageByID(id, path)](#IServTool+getMessageByID) ⇒ <code>Object</code>
-    * [.userLookup(query)](#IServTool+userLookup) ⇒ <code>Object</code>
-    * [.getFolderTree([subfolder])](#IServTool+getFolderTree) ⇒ <code>Object</code>
-    * [.getEventSources()](#IServTool+getEventSources) ⇒ <code>Object</code>
-    * [.getEventsFromSource(source, start, end)](#IServTool+getEventsFromSource) ⇒ <code>Object</code>
-    * [.isCookieValid()](#IServTool+isCookieValid) ⇒ <code>Object</code>
+    * [.getNotifications(since)](#IServTool+getNotifications) ⇒ <code>Promise.&lt;Object&gt;</code>
+    * [.getMailFolders()](#IServTool+getMailFolders) ⇒ <code>Promise.&lt;Object&gt;</code>
+    * [.getUnreadMails()](#IServTool+getUnreadMails) ⇒ <code>Promise.&lt;Object&gt;</code>
+    * [.getMessagesForInbox([path], [length], [start], [column], [dir])](#IServTool+getMessagesForInbox) ⇒ <code>Promise.&lt;Object&gt;</code>
+    * [.getUpcomingEvents([includeSubscriptions], [limit])](#IServTool+getUpcomingEvents) ⇒ <code>Promise.&lt;Object&gt;</code>
+    * [.getUserProfilePic(user, [w], [h])](#IServTool+getUserProfilePic) ⇒ <code>Promise.&lt;Object&gt;</code>
+    * [.getMessageByID(id, [path])](#IServTool+getMessageByID) ⇒ <code>Promise.&lt;Object&gt;</code>
+    * [.userLookup(query)](#IServTool+userLookup) ⇒ <code>Promise.&lt;Object&gt;</code>
+    * [.getFolderTree([subfolder])](#IServTool+getFolderTree) ⇒ <code>Promise.&lt;Object&gt;</code>
+    * [.getEventSources()](#IServTool+getEventSources) ⇒ <code>Promise.&lt;Object&gt;</code>
+    * [.getEventsFromSource(source, start, end)](#IServTool+getEventsFromSource) ⇒ <code>Promise.&lt;Object&gt;</code>
+    * [.isCookieValid()](#IServTool+isCookieValid) ⇒ <code>Promise.&lt;Object&gt;</code>
 
 <a name="new_IServTool_new"></a>
 
@@ -45,7 +45,7 @@ Login
 **Kind**: instance method of [<code>IServTool</code>](#IServTool)  
 <a name="IServTool+getNotifications"></a>
 
-### iServTool.getNotifications(since) ⇒ <code>Promise.&lt;\*&gt;</code>
+### iServTool.getNotifications(since) ⇒ <code>Promise.&lt;Object&gt;</code>
 Get all notifications from the Server for the logged in account
 
 **Kind**: instance method of [<code>IServTool</code>](#IServTool)  
@@ -56,59 +56,59 @@ Get all notifications from the Server for the logged in account
 
 <a name="IServTool+getMailFolders"></a>
 
-### iServTool.getMailFolders() ⇒ <code>Promise.&lt;\*&gt;</code>
+### iServTool.getMailFolders() ⇒ <code>Promise.&lt;Object&gt;</code>
 Get all Mailfolders / Inboxes for current user
 
 **Kind**: instance method of [<code>IServTool</code>](#IServTool)  
 <a name="IServTool+getUnreadMails"></a>
 
-### iServTool.getUnreadMails() ⇒ <code>Promise.&lt;\*&gt;</code>
+### iServTool.getUnreadMails() ⇒ <code>Promise.&lt;Object&gt;</code>
 Get all Mails in INBOX
 
 **Kind**: instance method of [<code>IServTool</code>](#IServTool)  
 <a name="IServTool+getMessagesForInbox"></a>
 
-### iServTool.getMessagesForInbox(path, length, start, column, dir) ⇒ <code>Object</code>
+### iServTool.getMessagesForInbox([path], [length], [start], [column], [dir]) ⇒ <code>Promise.&lt;Object&gt;</code>
 Get all Messages for specified Inbox
 
 **Kind**: instance method of [<code>IServTool</code>](#IServTool)  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| path | <code>String</code> | <code>INBOX</code> |  |
-| length | <code>int</code> \| <code>string</code> | <code>50</code> | Amount of Mails returned |
-| start | <code>int</code> \| <code>string</code> | <code>0</code> | Offset (50 for starting at 50. Mail) |
-| column | <code>string</code> | <code>&quot;date&quot;</code> | Set column for sorting |
-| dir | <code>string</code> | <code>&quot;desc&quot;</code> | Sorting direction (desc/asc) |
+| [path] | <code>String</code> | <code>&quot;INBOX&quot;</code> |  |
+| [length] | <code>int</code> \| <code>string</code> | <code>50</code> | Amount of Mails returned |
+| [start] | <code>int</code> \| <code>string</code> | <code>0</code> | Offset (50 for starting at 50. Mail) |
+| [column] | <code>string</code> | <code>&quot;\&quot;date\&quot;&quot;</code> | Set column for sorting |
+| [dir] | <code>string</code> | <code>&quot;\&quot;desc\&quot;&quot;</code> | Sorting direction (desc/asc) |
 
 <a name="IServTool+getUpcomingEvents"></a>
 
-### iServTool.getUpcomingEvents(includeSubscriptions, limit) ⇒ <code>Object</code>
+### iServTool.getUpcomingEvents([includeSubscriptions], [limit]) ⇒ <code>Promise.&lt;Object&gt;</code>
 Get all upcoming Events
 
 **Kind**: instance method of [<code>IServTool</code>](#IServTool)  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| includeSubscriptions | <code>boolean</code> | <code>true</code> | Include Subscriptions |
-| limit | <code>int</code> \| <code>String</code> | <code>14</code> | how many events to be returnes |
+| [includeSubscriptions] | <code>boolean</code> | <code>true</code> | Include Subscriptions |
+| [limit] | <code>int</code> \| <code>String</code> | <code>14</code> | how many events to be returnes |
 
 <a name="IServTool+getUserProfilePic"></a>
 
-### iServTool.getUserProfilePic(user, w&#x3D;, h&#x3D;) ⇒ <code>Object</code>
+### iServTool.getUserProfilePic(user, [w], [h]) ⇒ <code>Promise.&lt;Object&gt;</code>
 Get a users Profile Picture. Returns false if no image was found
 
 **Kind**: instance method of [<code>IServTool</code>](#IServTool)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| user | <code>String</code> | Username you want the image from |
-| w= | <code>int</code> \| <code>String</code> | Image width, leave blank for full size |
-| h= | <code>int</code> \| <code>String</code> | Image height, leave blank for full size |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| user | <code>String</code> |  | Username you want the image from |
+| [w] | <code>int</code> \| <code>String</code> | <code>&quot;&quot;</code> | Image width, leave blank for full size |
+| [h] | <code>int</code> \| <code>String</code> | <code>&quot;&quot;</code> | Image height, leave blank for full size |
 
 <a name="IServTool+getMessageByID"></a>
 
-### iServTool.getMessageByID(id, path) ⇒ <code>Object</code>
+### iServTool.getMessageByID(id, [path]) ⇒ <code>Promise.&lt;Object&gt;</code>
 Get a Message (Mail) by ID
 
 **Kind**: instance method of [<code>IServTool</code>](#IServTool)  
@@ -116,11 +116,11 @@ Get a Message (Mail) by ID
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | id | <code>int</code> \| <code>String</code> |  | Message ID |
-| path | <code>String</code> | <code>INBOX</code> | Message Path (Inbox name) |
+| [path] | <code>String</code> | <code>&quot;INBOX&quot;</code> | Message Path (Inbox name) |
 
 <a name="IServTool+userLookup"></a>
 
-### iServTool.userLookup(query) ⇒ <code>Object</code>
+### iServTool.userLookup(query) ⇒ <code>Promise.&lt;Object&gt;</code>
 Quick user lookup - for autocompletion
 
 **Kind**: instance method of [<code>IServTool</code>](#IServTool)  
@@ -131,24 +131,24 @@ Quick user lookup - for autocompletion
 
 <a name="IServTool+getFolderTree"></a>
 
-### iServTool.getFolderTree([subfolder]) ⇒ <code>Object</code>
+### iServTool.getFolderTree([subfolder]) ⇒ <code>Promise.&lt;Object&gt;</code>
 Get Folder Tree (Files)
 
 **Kind**: instance method of [<code>IServTool</code>](#IServTool)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| [subfolder] | <code>String</code> | ID to create tree. Leave blank for root |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [subfolder] | <code>String</code> | <code>&quot;&quot;</code> | ID to create tree. Leave blank for root |
 
 <a name="IServTool+getEventSources"></a>
 
-### iServTool.getEventSources() ⇒ <code>Object</code>
+### iServTool.getEventSources() ⇒ <code>Promise.&lt;Object&gt;</code>
 Get all EventSources aka Calendars
 
 **Kind**: instance method of [<code>IServTool</code>](#IServTool)  
 <a name="IServTool+getEventsFromSource"></a>
 
-### iServTool.getEventsFromSource(source, start, end) ⇒ <code>Object</code>
+### iServTool.getEventsFromSource(source, start, end) ⇒ <code>Promise.&lt;Object&gt;</code>
 Get Events from Source
 
 **Kind**: instance method of [<code>IServTool</code>](#IServTool)  
@@ -161,7 +161,7 @@ Get Events from Source
 
 <a name="IServTool+isCookieValid"></a>
 
-### iServTool.isCookieValid() ⇒ <code>Object</code>
+### iServTool.isCookieValid() ⇒ <code>Promise.&lt;Object&gt;</code>
 Check if the saved Cookies are still valid
 
 **Kind**: instance method of [<code>IServTool</code>](#IServTool)  
