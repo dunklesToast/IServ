@@ -123,7 +123,7 @@ class IServTool {
      * @param {(int|string)} start=0 - Offset (50 for starting at 50. Mail)
      * @param {string} column=date - Set column for sorting
      * @param {string} dir=desc - Sorting direction (desc/asc)
-     * @returns {Object}
+     * @returns {Promise<Object>}
      */
     async getMessagesForInbox(path = 'INBOX', length = 50, start = 0, column = 'date', dir = 'desc') {
         const resp = await this._axios({
@@ -146,7 +146,7 @@ class IServTool {
      * Get all upcoming Events
      * @param {boolean} includeSubscriptions=true - Include Subscriptions
      * @param {(int|String)} limit=14 - how many events to be returnes
-     * @returns {Object}
+     * @returns {Promise<Object>}
      */
     async getUpcomingEvents(includeSubscriptions = false, limit = 14) {
         const url = "https://mcggehrden.de/iserv/calendar/api/upcoming?includeSubscriptions=false&limit=14";
@@ -168,7 +168,7 @@ class IServTool {
      * @param {String} user - Username you want the image from
      * @param {(int|String)} w= - Image width, leave blank for full size
      * @param {(int|String)} h= - Image height, leave blank for full size
-     * @returns {Object}
+     * @returns {Promise<Object>}
      */
     async getUserProfilePic(user, w = '', h = '') {
         try {
@@ -186,7 +186,7 @@ class IServTool {
      * Get a Message (Mail) by ID
      * @param {(int|String)} id - Message ID
      * @param {String} path=INBOX - Message Path (Inbox name)
-     * @returns {Object}
+     * @returns {Promise<Object>}
      */
     async getMessageByID(id, path = "INBOX") {
         this._log(`[GMBID] Getting Message #${id} from "${path}"`)
@@ -204,7 +204,7 @@ class IServTool {
     /**
      * Quick user lookup - for autocompletion
      * @param {String} query - Query
-     * @returns {Object}
+     * @returns {Promise<Object>}
      */
     async userLookup(query) {
         if (!query) throw new Error('No query given to user lookup');
@@ -220,7 +220,7 @@ class IServTool {
     /**
      * Get Folder Tree (Files)
      * @param {String} [subfolder] - ID to create tree. Leave blank for root
-     * @returns {Object}
+     * @returns {Promise<Object>}
      */
     async getFolderTree(subfolder = '') {
         const resp = await this._axios({
@@ -231,7 +231,7 @@ class IServTool {
 
     /**
      * Get all EventSources aka Calendars
-     * @returns {Object}
+     * @returns {Promise<Object>}
      */
     async getEventSources() {
         const resp = await this._axios({
@@ -245,7 +245,7 @@ class IServTool {
      * @param {String} source - Path to source
      * @param {String} start - Start date for query
      * @param {String} end - End date for query
-     * @returns {Object}
+     * @returns {Promise<Object>}
      */
     async getEventsFromSource(source, start, end){
         const resp = await this._axios({
@@ -275,7 +275,7 @@ class IServTool {
 
     /**
      * Check if the saved Cookies are still valid
-     * @returns {Object}
+     * @returns {Promise<Object>}
      */
     async isCookieValid() {
         try {
