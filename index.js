@@ -118,11 +118,11 @@ class IServTool {
 
     /**
      * Get all Messages for specified Inbox
-     * @param {String} path=INBOX
-     * @param {(int|string)} length=50 - Amount of Mails returned
-     * @param {(int|string)} start=0 - Offset (50 for starting at 50. Mail)
-     * @param {string} column=date - Set column for sorting
-     * @param {string} dir=desc - Sorting direction (desc/asc)
+     * @param {String} [path="INBOX"]
+     * @param {(int|string)} [length=50] - Amount of Mails returned
+     * @param {(int|string)} [start=0] - Offset (50 for starting at 50. Mail)
+     * @param {string} [column="date"] - Set column for sorting
+     * @param {string} [dir="desc"] - Sorting direction (desc/asc)
      * @returns {Promise<Object>}
      */
     async getMessagesForInbox(path = 'INBOX', length = 50, start = 0, column = 'date', dir = 'desc') {
@@ -144,8 +144,8 @@ class IServTool {
 
     /**
      * Get all upcoming Events
-     * @param {boolean} includeSubscriptions=true - Include Subscriptions
-     * @param {(int|String)} limit=14 - how many events to be returnes
+     * @param {boolean} [includeSubscriptions=true] - Include Subscriptions
+     * @param {(int|String)} [limit=14] - how many events to be returnes
      * @returns {Promise<Object>}
      */
     async getUpcomingEvents(includeSubscriptions = false, limit = 14) {
@@ -166,8 +166,8 @@ class IServTool {
     /**
      * Get a users Profile Picture. Returns false if no image was found
      * @param {String} user - Username you want the image from
-     * @param {(int|String)} w= - Image width, leave blank for full size
-     * @param {(int|String)} h= - Image height, leave blank for full size
+     * @param {(int|String)} [w=""] - Image width, leave blank for full size
+     * @param {(int|String)} [h=""] - Image height, leave blank for full size
      * @returns {Promise<Object>}
      */
     async getUserProfilePic(user, w = '', h = '') {
@@ -185,7 +185,7 @@ class IServTool {
     /**
      * Get a Message (Mail) by ID
      * @param {(int|String)} id - Message ID
-     * @param {String} path=INBOX - Message Path (Inbox name)
+     * @param {String} [path="INBOX"] - Message Path (Inbox name)
      * @returns {Promise<Object>}
      */
     async getMessageByID(id, path = "INBOX") {
@@ -219,7 +219,7 @@ class IServTool {
 
     /**
      * Get Folder Tree (Files)
-     * @param {String} [subfolder] - ID to create tree. Leave blank for root
+     * @param {String} [subfolder=""] - ID to create tree. Leave blank for root
      * @returns {Promise<Object>}
      */
     async getFolderTree(subfolder = '') {
