@@ -80,7 +80,7 @@ class IServTool {
     /**
      * Get all notifications from the Server for the logged in account
      * @param {String} since - Date where the Server should start fetching
-     * @returns {Promise<*>}
+     * @returns {Promise<Object>}
      */
     async getNotifications(since) {
         if(!since) throw new Error('No since given')
@@ -96,7 +96,7 @@ class IServTool {
 
     /**
      * Get all Mailfolders / Inboxes for current user
-     * @returns {Promise<*>}
+     * @returns {Promise<Object>}
      */
     async getMailFolders() {
         const resp = await this._axios({
@@ -107,7 +107,7 @@ class IServTool {
 
     /**
      * Get all Mails in INBOX
-     * @returns {Promise<*>}
+     * @returns {Promise<Object>}
      */
     async getUnreadMails() {
         const resp = await this._axios({
