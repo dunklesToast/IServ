@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "axios": "^0.18.0",
+    "axios-cookiejar-support": "^0.4.2",
+    "form-data": "^2.3.3",
+    "tough-cookie": "^2.4.3",
+    "tunnel": "^0.0.6"
+  },
+  "name": "iserv",
+  "version": "0.2",
+  "description": "IServ API Wrapper for nodeJS",
+  "main": "index.js",
+  "repository": "https://github.com/dunklesToast/IServ",
+  "author": "dunklesToast",
+  "license": "MIT",
+  "private": false
+}
