@@ -149,7 +149,7 @@ class IServTool {
      * @returns {Promise<Object>}
      */
     async getUpcomingEvents(includeSubscriptions = false, limit = 14) {
-        const url = "https://mcggehrden.de/iserv/calendar/api/upcoming?includeSubscriptions=false&limit=14";
+        const url = "iserv/calendar/api/upcoming";
         const resp = await this._axios({
             url: 'iserv/calendar/api/upcoming',
             headers: {
@@ -209,7 +209,7 @@ class IServTool {
     async userLookup(query) {
         if (!query) throw new Error('No query given to user lookup');
         const resp = await this._axios({
-            url: 'iserv/addressbook/lookup?query=warnke',
+            url: 'iserv/addressbook/lookup',
             params: {
                 query: query
             }
