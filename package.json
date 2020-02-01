@@ -7,7 +7,7 @@
     "tunnel": "^0.0.6"
   },
   "name": "iserv",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "IServ API Wrapper for nodeJS",
   "main": "index.js",
   "repository": "https://github.com/dunklesToast/IServ",
