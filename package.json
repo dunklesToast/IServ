@@ -1,9 +1,9 @@
 {
   "dependencies": {
-    "axios": "^0.18.0",
-    "axios-cookiejar-support": "^0.4.2",
-    "form-data": "^2.3.3",
-    "tough-cookie": "^2.4.3",
+    "axios": "^0.19.2",
+    "axios-cookiejar-support": "^0.5.1",
+    "form-data": "^3.0.0",
+    "tough-cookie": "^3.0.1",
     "tunnel": "^0.0.6"
   },
   "name": "iserv",
